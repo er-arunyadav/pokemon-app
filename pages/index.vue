@@ -4,12 +4,12 @@
     <hr>
     <div class="row" v-for="(pokemons, index) in groupedPokemon" :key="'pokemon'+index">
     
-    <div v-for="(pokemon,index) in pokemons" :key="'poke'+index" class="col-lg-4">
+    <div v-for="(pokemon,index) in pokemons" :key="'poke'+index" class="col-sm-3">
     <div class="card mb-5 bg">
       <div class="card-body pb-5">
         <img :src="imageUrl + pokemon.id + '.png'" width="96" height="96">
-                <h1>{{pokemon.name}}</h1>
-                <p>{{pokemon.url}}</p>
+                <p>{{pokemon.name}}</p>
+              
       </div>
     </div>
     </div>
@@ -83,7 +83,7 @@ export default {
   },
   computed:{
   groupedPokemon() {
-    return _.chunk(this.pokemons, 3)  
+    return _.chunk(this.pokemons, 4)  
   }
 },
 
